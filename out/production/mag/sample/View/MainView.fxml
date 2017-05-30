@@ -35,6 +35,10 @@
                         <Label layoutX="14.0" layoutY="105.0" text="Input:" />
                         <Label layoutX="12.0" layoutY="213.0" text="Output:" />
                         <Button fx:id="convert" layoutX="523.0" layoutY="332.0" mnemonicParsing="false" onAction="#convertButtonPressed" text="Convert" />
+                        <Label layoutX="16.0" layoutY="324.0" text="Nitric Base count:" />
+                        <Label layoutX="16.0" layoutY="341.0" text="Estimated cost:" />
+                        <Label fx:id="nucleotideAmountLabel" layoutX="112.0" layoutY="324.0" text="Label" />
+                        <Label fx:id="priceLabel" layoutX="112.0" layoutY="341.0" text="Label" />
                      </children>
               </AnchorPane>
             </content>

@@ -30,12 +30,6 @@ public class SimpleEncoding extends Algorithm<String>{
     }
 
     @Override
-    public void setInputFile(File file) {
-        this.inputFile = file;
-        this.bitRepresentationInput = fileToByteArray();
-    }
-
-    @Override
     public void convert() {
         StringBuilder builder = new StringBuilder();
         Arrays.stream(bitRepresentationInput.split("(?<=\\G.{2})")).forEach(p -> builder.append(dictionary.get(p)));
@@ -46,7 +40,5 @@ public class SimpleEncoding extends Algorithm<String>{
     public String toString() {
         return name;
     }
-
-
 
 }

@@ -18,16 +18,20 @@ public abstract class Algorithm<T> {
     public Algorithm(File inputFile) {
         this.inputFile = inputFile;
         this.bitRepresentationInput = fileToByteArray();
+
     }
 
-    public Algorithm(){}
+    public Algorithm(){
+        this.dnaRepresentationOutput="";
+    }
 
     public void saveFile(){
 
     }
 
     public void setInputFile(File file){
-
+        this.inputFile = file;
+        this.bitRepresentationInput = fileToByteArray();
     };
 
     public String getOutput() {
@@ -40,7 +44,6 @@ public abstract class Algorithm<T> {
 
     public abstract void convert();
 
-    @Override
     public abstract String toString();
 
     protected String fileToByteArray() {

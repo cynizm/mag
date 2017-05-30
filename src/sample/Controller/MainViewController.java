@@ -11,21 +11,20 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import sample.Common.Algorithm;
-import sample.Model.HuffmanAlgorithm;
+import sample.Model.Huffman.HuffmanAlgorithm;
+import sample.Model.Reprezentation;
 import sample.Model.SimpleEncoding;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by TeTorro on 25.03.2017.
  */
 public class MainViewController implements Initializable{
+
+    private static final double unitPrice=0.06;
 
     @FXML
     private Button fileOpen;
@@ -44,6 +43,17 @@ public class MainViewController implements Initializable{
 
     @FXML
     private ComboBox<Algorithm> algorithmComboBox;
+
+    @FXML
+    private Label priceLabel;
+
+    @FXML
+    private Label nucleotideAmountLabel;
+
+
+    private int nucleotideAmount;
+
+    private double pricing;
 
     private ObservableList<Algorithm> algorithms;
 
@@ -65,7 +75,15 @@ public class MainViewController implements Initializable{
         algorithm.setInputFile(currentFile);
         algorithm.convert();
         inputField.setText(algorithm.getRepresentation().toString());
-        outputField.setText(algorithm.getOutput().toString());
+        outputField.setText(Reprezentation.toResult(Reprezentation.convertToReprezentation(algorithm.getOutput().toString())));
+        calculatePricing(algorithm.getOutput().length());
+    }
+
+    private void calculatePricing(int amount){
+        nucleotideAmount=amount;
+        pricing=nucleotideAmount*unitPrice;
+        priceLabel.setText(String.valueOf(pricing));
+        nucleotideAmountLabel.setText(String.valueOf(nucleotideAmount));
 
     }
 

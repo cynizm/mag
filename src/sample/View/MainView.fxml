@@ -31,10 +31,14 @@
                         <ComboBox fx:id="algorithmComboBox" layoutX="79.0" layoutY="70.0" prefWidth="150.0" />
                         <Label layoutX="14.0" layoutY="74.0" text="Algorytm: " />
                         <TextArea fx:id="outputField" editable="false" layoutX="13.0" layoutY="230.0" prefHeight="86.0" prefWidth="574.0" />
-                        <TextArea fx:id="inputField" editable="false" layoutX="12.0" layoutY="122.0" prefHeight="82.0" prefWidth="576.0" />
+                        <TextArea fx:id="inputField" editable="false" layoutX="12.0" layoutY="122.0" prefHeight="82.0" prefWidth="576.0" wrapText="true" />
                         <Label layoutX="14.0" layoutY="105.0" text="Input:" />
                         <Label layoutX="12.0" layoutY="213.0" text="Output:" />
                         <Button fx:id="convert" layoutX="523.0" layoutY="332.0" mnemonicParsing="false" onAction="#convertButtonPressed" text="Convert" />
+                        <Label layoutX="16.0" layoutY="324.0" text="Nitric Base count:" />
+                        <Label layoutX="16.0" layoutY="341.0" text="Estimated cost:" />
+                        <Label fx:id="nucleotideAmountLabel" layoutX="112.0" layoutY="324.0" text="Label" />
+                        <Label fx:id="priceLabel" layoutX="112.0" layoutY="341.0" text="Label" />
                      </children>
               </AnchorPane>
             </content>

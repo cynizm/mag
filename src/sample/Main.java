@@ -22,7 +22,7 @@ public class Main extends Application {
 //        }
         Parent root = FXMLLoader.load(getClass().getResource("View/MainView.fxml"));
         primaryStage.setTitle("Data to DNA Converter");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 600 , 400));
         primaryStage.show();
     }
 
